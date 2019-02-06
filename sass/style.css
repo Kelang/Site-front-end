@@ -80,8 +80,10 @@ body, html {
           transform: translateX(-100%);
   -webkit-transition: all cubic-bezier(0, 1.08, 0.58, 1);
   transition: all cubic-bezier(0, 1.08, 0.58, 1);
-  -webkit-animation: sortieMenu 1s ease-in-out 0s;
-          animation: sortieMenu 1s ease-in-out 0s;
+}
+
+.checkBurger {
+  display: none;
 }
 
 .MenuContainer.MenuAnimEntrer {
@@ -92,8 +94,8 @@ body, html {
 }
 
 .MenuContainer.MenuAnimSortie {
-  -webkit-animation: sortieMenu 1s ease-in-out 0s;
-          animation: sortieMenu 1s ease-in-out 0s;
+  -webkit-animation: sortieMenu .5s ease-in-out 0s;
+          animation: sortieMenu .5s ease-in-out 0s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -102,7 +104,6 @@ body, html {
   0% {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
-    opacity: 1;
   }
   100%,
   to {
@@ -115,7 +116,6 @@ body, html {
   0% {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
-    opacity: 1;
   }
   100%,
   to {
@@ -126,21 +126,25 @@ body, html {
 
 @-webkit-keyframes sortieMenu {
   0% {
-    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
   }
   100%,
   to {
-    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
 }
 
 @keyframes sortieMenu {
   0% {
-    opacity: 1;
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
   }
   100%,
   to {
-    opacity: 0;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
   }
 }
 
@@ -250,6 +254,8 @@ canvas{
   opacity: 0;
   -webkit-animation: presentationAnim 1s  forwards;
           animation: presentationAnim 1s  forwards;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
 }
 
 @-webkit-keyframes presentationAnim {

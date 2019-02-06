@@ -63,15 +63,22 @@ body, html{
     background-color: #ffffff;
     transform: translateX(-100%);
     transition: all cubic-bezier(0, 1.08, 0.58, 1);
-    animation: sortieMenu 1s ease-in-out 0s;
+    
 }
+
+.checkBurger{
+    display: none;
+}
+
+
 
 .MenuContainer.MenuAnimEntrer{
     animation: entrerMenu 1s ease-in-out 0s;
     animation-fill-mode:forwards;
 }
+
 .MenuContainer.MenuAnimSortie{
-    animation: sortieMenu 1s ease-in-out 0s;
+    animation: sortieMenu .5s ease-in-out 0s;
     animation-fill-mode:forwards;
 }
 
@@ -79,7 +86,7 @@ body, html{
 @keyframes entrerMenu{
     0%{
         transform: translateX(-100%);
-        opacity: 1;
+        
     }
     100%,
     to{
@@ -89,13 +96,19 @@ body, html{
 
 @keyframes sortieMenu{
     0%{
-        opacity: 1;
+        transform: translateY(0%);
+        
     }
     100%,
     to{
-        opacity: 0;
+        transform: translateY(-100%);
+        
     }
 }
+
+
+
+
 
 
 
@@ -174,6 +187,7 @@ canvas{
     left: 20%;
     opacity:0;
     animation: presentationAnim 1s  forwards;
+    animation-delay: .5s;
 }
 
 
