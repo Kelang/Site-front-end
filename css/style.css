@@ -1,0 +1,231 @@
+body, html {
+  font-family: 'Nunito', sans-serif;
+}
+
+/*******************BURGER MENU********************/
+#BurgerMenuWrapper {
+  display: block;
+  position: absolute;
+  padding: 20px;
+  top: 50%;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.BurgerMenuLine {
+  width: 25px;
+  height: 3px;
+  background-color: #7c2f2f;
+  margin-top: 5px;
+  border-radius: 10px;
+  -webkit-transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
+  transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
+}
+
+.menu.BurgerMenuAnim {
+  -webkit-animation: tournerBoutonBurger 2s;
+          animation: tournerBoutonBurger 2s;
+}
+
+@-webkit-keyframes tournerBoutonBurger {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50%,
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes tournerBoutonBurger {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50%,
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.menu.BurgerMenuAnim .line1 {
+  -webkit-transform: translateY(0.5em) rotate(45deg);
+          transform: translateY(0.5em) rotate(45deg);
+  background-color: #000000;
+}
+
+.menu.BurgerMenuAnim .line2 {
+  opacity: 0;
+  background-color: #000000;
+}
+
+.menu.BurgerMenuAnim .line3 {
+  -webkit-transform: translateY(-0.5em) rotate(-45deg);
+          transform: translateY(-0.5em) rotate(-45deg);
+  top: 50%;
+  background-color: #000000;
+}
+
+.checkBurger {
+  display: none;
+}
+
+/**************************************************/
+/****************SIDE MENU************************/
+.MenuContainer {
+  background-color: red;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 5;
+  position: fixed;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: all cubic-bezier(0, 1.08, 0.58, 1);
+  transition: all cubic-bezier(0, 1.08, 0.58, 1);
+}
+
+.MenuContainer.MenuAnimEntrer {
+  -webkit-animation: entrerMenu 1s ease-in-out 0s;
+          animation: entrerMenu 1s ease-in-out 0s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.MenuContainer.MenuAnimSortie {
+  -webkit-animation: sortieMenu .5s ease-in-out 0s;
+          animation: sortieMenu .5s ease-in-out 0s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes entrerMenu {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100%,
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@keyframes entrerMenu {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100%,
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes sortieMenu {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  100%,
+  to {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+@keyframes sortieMenu {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  100%,
+  to {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+.navContainer {
+  padding-top: 30vh;
+  padding-left: 2em;
+  font-size: 4em;
+}
+
+.navContainer a {
+  margin: 30px;
+  text-decoration: none;
+  color: #000000;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: block;
+  background: blueviolet;
+  width: 300px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.navContainer a:nth-child(1) {
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
+}
+
+.navContainer a:nth-child(2) {
+  -webkit-animation-delay: .6s;
+          animation-delay: .6s;
+}
+
+.navContainer a:nth-child(3) {
+  -webkit-animation-delay: .9s;
+          animation-delay: .9s;
+}
+
+.navContainer a:nth-child(4) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+.navLink.navContentAnim {
+  -webkit-animation: menuLink 1s ease-in-out;
+          animation: menuLink 1s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes menuLink {
+  0% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  50% {
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes menuLink {
+  0% {
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  50% {
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/************************************************/
+/*# sourceMappingURL=style.css.map */

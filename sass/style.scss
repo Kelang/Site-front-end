@@ -1,10 +1,13 @@
 body, html{
-    font-family: 'Roboto', sans-serif;
-    background-color: #000000;
+    font-family: 'Nunito', sans-serif;
+    
 }
 
-/********BURGER MENU*************/
-.BurgerMenu{
+
+
+
+/*******************BURGER MENU********************/
+#BurgerMenuWrapper{
     display: block;
     position: absolute;
     padding: 20px;
@@ -16,7 +19,7 @@ body, html{
 .BurgerMenuLine{
     width: 25px;
     height: 3px;
-    background-color: #ffffff;
+    background-color: #b3ff00;
     margin-top: 5px;
     border-radius: 10px;
     transition: all cubic-bezier(0.25, 0.1, 0.28, 1.54) 0.32s;
@@ -52,25 +55,26 @@ body, html{
     top: 50%;
     background-color: #000000;
 }
-/****************FIN MENU BURGER********************************/
-
-
-/**************MENU SLIDER**********************/
-
-.MenuContainer{
-    height: 100vh;
-    width: 100vw;
-    background-color: #ffffff;
-    transform: translateX(-100%);
-    transition: all cubic-bezier(0, 1.08, 0.58, 1);
-    
-}
 
 .checkBurger{
     display: none;
 }
 
+/**************************************************/
 
+/****************SIDE MENU************************/
+
+.MenuContainer{
+    background-color: red;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 5;
+    position: fixed;
+    transform: translateX(-100%);
+    transition: all cubic-bezier(0, 1.08, 0.58, 1);
+    
+}
 
 .MenuContainer.MenuAnimEntrer{
     animation: entrerMenu 1s ease-in-out 0s;
@@ -108,41 +112,48 @@ body, html{
 
 
 
-
-
-
-
-nav{
+.navContainer{
     padding-top: 30vh;
     padding-left: 2em;
-    display: flex;
-    flex-direction: column;
     font-size: 4em;
-    a{
-        margin: 30px;
-        text-decoration: none;
-        color: #000000;
-        opacity: 0;
-        transition: all 0.2s ease-in-out;
-        width: 260px;
+    
+}
+
+//------- {{ effect-3 }} -------//
+
+.souligner {
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    overflow: hidden;
+    &:before {
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: $hover;
+      transform:  translateX(-100%);
     }
-}
+    &:hover:before {
+      transform:  translateX(0);
+    }
+  }
 
-a:hover{
-    text-decoration: underline;
-}
 
-.navContent a:nth-child(1){
-    animation-delay: .5s;
+
+
+
+.navContainer a:nth-child(1){
+    animation-delay: .3s;
 }
-.navContent a:nth-child(2){
-    animation-delay: 1s;
+.navContainer a:nth-child(2){
+    animation-delay: .6s;
 }
-.navContent a:nth-child(3){
-    animation-delay: 1.5s;
+.navContainer a:nth-child(3){
+    animation-delay: .9s;
 }
-.navContent a:nth-child(4){
-    animation-delay: 2s;
+.navContainer a:nth-child(4){
+    animation-delay: 1.2s;
 }
 
 
@@ -166,39 +177,8 @@ a:hover{
     }
 }
 
-/*************FIN MENU SLIDER************************/
-
-/*
-canvas{
-    width: 100%; 
-    height: 100%;
-}
-*/
-
-
-.presentation{
-    color: #ffffff;
-    font-size: 5em;
-    display: flex;
-    flex-direction: column;
-    padding: .4em;
-    position: fixed;
-    top: 40%;
-    left: 20%;
-    opacity:0;
-    animation: presentationAnim 1s  forwards;
-    animation-delay: .5s;
-}
 
 
 
 
-@keyframes presentationAnim{
-    0%{
-        transform: translateX(50%);
-    }
-    100%{
-        transform: translateX(0%);
-        opacity: 1;
-    }
-}
+/************************************************/
